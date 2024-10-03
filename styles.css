@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 * {
   margin: 0;
   padding: 0;
@@ -32,44 +33,55 @@ html {
 :root {
   --font-size-base: 16px;
   --font-size-headings: 1.5rem;
+
   /* Grunn bilið okkar er 1rem == 16px */
   --spacing: 1rem;
+
   /* Bil á milli „stærri“ eininga (header, efnisbox, footer) */
   --vertical-space: calc(var(--gutter) * 1);
   --vertical-space-large: calc(var(--gutter) * 1.5);
+
   /* Hámarks og lágmarks breidd á efni */
   --max-width: 1200px;
   --min-width-image: 200px;
   --max-width-image: 300px;
   --max-width-footer-section: 250px;
+
   /* Border breiddir */
   --border-width: 1px;
   --border-radius-regular: 5px;
   --border-radius-image: 10px;
   --border-regular: 1px solid #000; /* todo longhand */
   --border-with-background: 4px solid #c9b;
+
   /* Grid stillingar */
   --columns: 12;
   --gutter: 30px;
   --offset: 20px;
+
   /* Breidd á efni með offset */
   --width-offset: calc(100% - (2 * var(--offset)));
+
   /* Litir */
+
   /** Litir með nafni **/
   --color-yellow: #f3dd99;
   --color-white: #fff;
   --color-black: #000;
   --color-purple: #ebd;
   --color-purple-dark: #c9b;
+
   /** Litir með notkun **/
   --color-background-primary: var(--color-yellow);
   --color-background-secondary: var(--color-purple);
   --color-background-form: var(--color-white);
   --color-border-with-background: var(--color-purple-dark);
+
   /* Letur stillingar */
   --font-base-size: 1rem;
-  --font-family-base: "Open Sans", arial, helvetica, sans-serif;
-  --font-family-heading: "Matemasie-Regular", "Comic Sans MS", cursive;
+  --font-family-base: 'Open Sans', arial, helvetica, sans-serif;
+  --font-family-heading: 'Matemasie-Regular', 'Comic Sans MS', cursive;
+
   /* Transitions */
   --transition-time-short: 300ms;
   --transition-time-long: 600ms;
@@ -82,20 +94,23 @@ html {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("./fonts/Matemasie-Regular.ttf") format("woff2");
+  src: url('./fonts/Matemasie-Regular.ttf') format('woff2');
 }
+
 @font-face {
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("./fonts/OpenSans-VariableFont_wdth,wght.ttf") format("woff2");
+  src: url('./fonts/OpenSans-VariableFont_wdth,wght.ttf') format('woff2');
 }
+
 @font-face {
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-weight: 700;
-  src: url("./fonts/OpenSans-VariableFont_wdth,wght.ttf") format("woff2");
+  src: url('./fonts/OpenSans-VariableFont_wdth,wght.ttf') format('woff2');
 }
+
 /*** Allt meginmál notar open sans ***/
 html,
 input,
@@ -152,10 +167,12 @@ a {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
+
 header,
 .wrapper {
   animation: var(--transition-time-long) var(--transition-timing-function) fade-in;
@@ -173,6 +190,7 @@ header,
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 100%;
+
   /* grid items eru miðjuð */
   justify-items: center;
   gap: var(--vertical-space);
@@ -186,6 +204,7 @@ header,
     gap: var(--vertical-space-large);
   }
 }
+
 .wrapper .wrapper-content {
   width: var(--width-offset);
   max-width: var(--max-width);
@@ -201,14 +220,18 @@ header,
     grid-template-columns: repeat(var(--columns), 1fr);
     gap: var(--gutter);
   }
+
   .wrapper .wrapper-nav {
     grid-column: span 2;
   }
+
   .wrapper .wrapper-main {
     grid-column: span 10;
   }
 }
+
 /* Það sem fylgir er tillaga að uppbyggingu á selectorum fyrir verkefnið */
+
 /** Haus á síðum **/
 header {
   padding: var(--spacing) calc(var(--spacing) * 1.5);
@@ -254,10 +277,12 @@ footer h2 {
     width: var(--width-offset);
     max-width: var(--max-width);
   }
+
   footer .content > section {
     grid-column: span 4;
   }
 }
+
 /*** Opnunartími ***/
 dt {
   font-weight: bold;
@@ -290,6 +315,7 @@ nav ul li {
     display: block;
   }
 }
+
 /** Meginmál og efni forsíðu **/
 main {
   width: 100%;
@@ -306,6 +332,7 @@ main > .content {
 }
 
 /** Spilasíða, töflustílar **/
+
 /* Leyfir skroll á töflu ef pláss er ekki nóg til að birta hana alla lárétt */
 .table-wrapper {
   overflow-x: auto;
@@ -392,7 +419,7 @@ fieldset textarea {
   background-color: var(--color-background-form);
 }
 
-fieldset input[type=checkbox] {
+fieldset input[type='checkbox'] {
   display: inline-block;
   margin-right: calc(var(--spacing) * 0.5);
   width: auto;
@@ -415,10 +442,12 @@ fieldset input[type=checkbox] {
   .intro {
     flex-direction: row;
   }
+
   .intro img {
     max-width: var(--max-width-image);
   }
 }
+
 /** Cards **/
 .cards {
   display: grid;
@@ -447,6 +476,7 @@ fieldset input[type=checkbox] {
     grid-template-rows: auto;
   }
 }
+
 .card {
   display: flex;
   flex-direction: column;
@@ -458,6 +488,7 @@ fieldset input[type=checkbox] {
     grid-column: span 5;
   }
 }
+
 .card > .image {
   width: 100%;
 }
@@ -508,5 +539,3 @@ fieldset input[type=checkbox] {
   gap: var(--spacing);
   margin-top: var(--spacing);
 }
-
-/*# sourceMappingURL=styles.css.map */
